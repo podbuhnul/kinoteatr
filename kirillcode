@@ -15,13 +15,13 @@ int main () {
   int aL = strlen(arrLogin); //strlen считает количество символов в строке
 
   if (3 <= aL && aL <= 20) {
-    system("clear");
+    system("cls");
     printf("Умничка!\n");
     goto checkParol1; //goto направляет дальнешую хуету куда надо
   }
 
   else {
-    system("clear");
+    system("cls");
     printf( "Солнышко, ты превысил или принизил допустимое количество символов в логине, попробуй еще раз!\n\n");
     goto checkLogin1;
   } 
@@ -34,10 +34,10 @@ int main () {
   int aP = strlen(arrParol); 
 
   if (6 <= aP && aP <= 20 && strpbrk(arrParol, "0123456789") && (strpbrk(arrParol, "ABCDEFGHIJKLMNOPQRSTUVWXYZ"))) {
-    system("clear");
+    system("cls");
     printf("И снова умничка!\n\n");
   } else {
-    system("clear");
+    system("cls");
     printf("Дебил, пробуй еще раз\n\n");
     goto checkParol2;
   }
