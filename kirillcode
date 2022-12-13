@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> //библиотека для работы со строками
+
+int main () {
+  char login; 
+  char arrLogin[login]; //массив, куда сохраняется значение логина
+  char parol;
+  char arrParol[parol]; //массив, куда сохраняется значение пароля
+
+  printf("Солнышко, придумай себе логин! Учти, его длина должна быть от 3 до 20 символов\n\n");
+  
+  checkLogin1:
+  scanf("%s", &arrLogin);
+  int aL = strlen(arrLogin); //strlen считает количество символов в строке
+
+  if (3 <= aL && aL <= 20) {
+    system("clear");
+    printf("Умничка!\n");
+    goto checkParol1; //goto направляет дальнешую хуету куда надо
+  }
+
+  else {
+    system("clear");
+    printf( "Солнышко, ты превысил или принизил допустимое количество символов в логине, попробуй еще раз!\n\n");
+    goto checkLogin1;
+  } 
+
+  checkParol1:
+  printf("А теперь придумай себе пароль! В нем обязательно должны присутствовать хотя бы одна цифра и буква другого регистра. Длина от 6 до 20 символов нах.\n\n");
+  
+  checkParol2:
+  scanf("%s", &arrParol);
+  int aP = strlen(arrParol); 
+
+  if (6 <= aP && aP <= 20 && strpbrk(arrParol, "0123456789") && (strpbrk(arrParol, "ABCDEFGHIJKLMNOPQRSTUVWXYZ"))) {
+    system("clear");
+    printf("И снова умничка!\n\n");
+  } else {
+    system("clear");
+    printf("Дебил, пробуй еще раз\n\n");
+    goto checkParol2;
+  }
+
+//strpbrk проверяет строку на хотя бы одно значение, написанное в скобках
+  
+}
+  
